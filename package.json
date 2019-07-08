@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/server.js",
-    "start-client": "live-server"
+    "start": "nodemon server/index.js",
+    "start-client": "live-server",
+    "test": "spect/test.js",
+    "seed": "node database/seed.js"
   },
   "author": "Shane Zhao",
   "license": "ISC",
@@ -21,9 +23,11 @@
     "cors": "^2.8.5",
     "express": "^4.15.0",
     "faker": "^4.1.0",
+    "jest": "^24.8.0",
     "jquery": "^3.4.1",
     "mongoose": "^5.6.3",
     "nodemon": "^1.19.1",
+    "puppeteer": "^1.18.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }
