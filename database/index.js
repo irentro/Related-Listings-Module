@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/recommendations', {useMongoClient: true});
 
 let recSchema = mongoose.Schema({
+  saved: Boolean,
   roomType: String,
   city: String,
   state: String,
@@ -9,19 +10,16 @@ let recSchema = mongoose.Schema({
   price: Number,
   reviewCount: Number,
   ratingStars: Number,
+  title: String,
   about: String,
   space: String,
-  neighborhood: String,
-  review: {
-    name: String,
-    date: Date,
-    comment: String
-  }
+  neighborhood: String
 });
 
 const Rec = mongoose.model('Recommendations', recSchema);
 
 let save = (obj, callback) => {
+  console.log('hello database save')
   const userRec = new Rec(obj);
   userRec.save((err) => {
     if(err) {
