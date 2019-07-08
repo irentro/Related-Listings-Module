@@ -18,7 +18,7 @@ afterAll(() => {
   browser.close();
 });
 
-describe('test name', () => {
+describe('test names', () => {
   test('testing test', () => {
 
   });
