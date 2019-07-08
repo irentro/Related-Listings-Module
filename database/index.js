@@ -13,7 +13,14 @@ let recSchema = mongoose.Schema({
   title: String,
   about: String,
   space: String,
-  neighborhood: String
+  neighborhood: String,
+  reviews: [
+    {
+      name: String,
+      date: String,
+      comment: String
+    }
+  ]
 });
 
 const Rec = mongoose.model('Recommendations', recSchema);

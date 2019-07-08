@@ -25,7 +25,7 @@ app.post('/recommendations/seed', (req, res) => {
     else if (req.body.saved === 1) {
       obj.saved = true;
     }
-
+    console.log('post obj', obj)
     Model.save(obj, (err) => {
       if(err){
         res.status(400).send('save error')
