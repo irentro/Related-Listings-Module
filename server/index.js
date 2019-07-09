@@ -5,8 +5,11 @@ const port = 4001;
 
 
 app.use(express.json());
+app.use(express.static('client/dist'));
+
 
 app.get('/recommendations', (req, res) => {
+  console.log('hello server get');
   Model.Rec.find({}, (err, results) => {
     if(err) {
       res.status(400).send('error')
