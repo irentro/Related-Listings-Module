@@ -29,6 +29,7 @@
     "nodemon": "^1.19.1",
     "puppeteer": "^1.18.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "underscore": "^1.9.1"
   }
 }
