@@ -36,15 +36,6 @@ app.post('/recommendations/seed', (req, res) => {
     })
 })
 
-
-
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 });
-
-
-let sum = (a, b) => {
-  return a + b;
-}
-
-module.exports.sum = sum;

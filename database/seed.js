@@ -1,6 +1,7 @@
 const faker  = require('faker');
 const _ = require('underscore');
 const Model = require('./index');
+const List = require('./title');
 
 const populate = () => {
 
@@ -17,7 +18,7 @@ const populate = () => {
     let mockPrice = _.sample([110, 115, 125, 130, 135, 140, 145, 150, 155, 160]);
     let mockReviewCount = faker.random.number({min:5, max:225});
     let mockRatingStars = _.sample([4,5]);
-    let mockTitle = 'Chateau on the Hill';
+    let mockTitle = List.titles[i];
     let aboutLength = faker.random.number({min:1, max:4});
     let mockAbout = faker.lorem.paragraph(aboutLength);
     let mockSpace = faker.lorem.paragraph(1);
