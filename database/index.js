@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/recommendations', {useMongoClient: true});
+mongoose.connect('mongodb://localhost/recommendations');
 
 let recSchema = mongoose.Schema({
   saved: Boolean,
+  imageUrl: String,
   roomType: String,
   city: String,
   state: String,
