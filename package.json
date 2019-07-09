@@ -1,5 +1,5 @@
 {
-  "name": "hackreactor-groceries",
+  "name": "rentro-recommendations",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
     "start-client": "live-server",
-    "test": "spect/test.js",
+    "test": "jest ./spec/server.test.js",
     "seed": "node database/seed.js"
   },
   "author": "Shane Zhao",
@@ -17,17 +17,20 @@
     "babel-loader": "^6.3.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.23.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
+    "puppeteer": "^1.18.1",
+    "supertest": "^4.0.2",
     "webpack": "^2.2.1"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.15.0",
     "faker": "^4.1.0",
-    "jest": "^24.8.0",
     "jquery": "^3.4.1",
     "mongoose": "^5.6.3",
     "nodemon": "^1.19.1",
-    "puppeteer": "^1.18.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "underscore": "^1.9.1"
