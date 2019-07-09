@@ -1,4 +1,4 @@
-const faker  = require('faker');
+const faker = require('faker');
 const _ = require('underscore');
 const Model = require('./index');
 const List = require('./title');
