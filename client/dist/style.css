@@ -1,0 +1,120 @@
+
+body {
+  font-family: system-ui;
+  color: #484848;
+}
+
+.outter-container {
+  width: 1032px ;
+  height: 432px;
+  margin: 0 auto;
+}
+
+.inner-container {
+  display: flex
+}
+
+.section-header {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 24px;
+}
+
+.list-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.list-item-wrapper {
+  width: 33.3333%;
+  height: 100%;
+  padding-left: 14px;
+  padding-right: 14px;
+  position: relative;
+  margin-left: -12px;
+}
+
+.list-item-detail-wrapper {
+  padding-top: 12px;
+}
+
+.list-item-image {
+  width: 332px;
+  height: 222px;
+  border-radius: 5px
+}
+
+.list-item-category {
+  display: flex;
+  color: #767676;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: uppercase;
+  padding-bottom: 3px
+}
+
+.list-item-city {
+  padding-left: 8px
+}
+
+.list-item-title {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-bottom: 3px
+}
+
+.list-item-price {
+  font-size: 14px;
+  line-height: 18px; 
+  font-weight: 200;
+  padding-bottom: 3px
+}
+
+.list-item-reviewCount {
+  font-size: 12px;
+  line-height: 16px; 
+  font-weight: 600;
+  padding-left: 5px
+}
+
+.left-arrow {
+  float:left;
+  margin-left: -20px;
+  margin-top: 95px;
+}
+
+.right-arrow {
+  float:right;
+  margin-top: 95px;
+  margin-right: -20px
+}
+
+.img-arrow {
+  height: 24px
+}
+
+.img-heart {
+  height: 24px;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+.list-item-star-wrapper {
+  display: flex;
+  padding-top: 3px
+}
+
+.list-item-review-wrapper {
+  display: flex;
+}
+
+.list-item-star {
+  height: 9px
+}
+

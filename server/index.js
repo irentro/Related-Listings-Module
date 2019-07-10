@@ -2,9 +2,13 @@ const express = require ('express');
 const app = express();
 const Model = require('../database/index')
 const port = 4001;
+const cors = require('cors')
 
 
 app.use(express.json());
+app.use(express.static('client/dist'));
+app.unsubscribe(cors())
+
 
 app.get('/recommendations', (req, res) => {
   Model.Rec.find({}, (err, results) => {
