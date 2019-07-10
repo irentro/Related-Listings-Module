@@ -37,15 +37,20 @@ class App extends React.Component {
   }
 
   handleCarouselMoveRight() {
-    this.setState({
-      position: this.state.position - 348
-    })
+
+    if(this.state.position >= -2784) {
+      this.setState({
+        position: this.state.position - 348
+      })
+    }
   }
 
   handleCarouselMoveLeft() {
-    this.setState({
-      position: this.state.position + 348
-    })
+    if(this.state.position !== 0) {
+      this.setState({
+        position: this.state.position + 348
+      })
+    }
   }
 
   
@@ -63,7 +68,7 @@ class App extends React.Component {
             <img 
               className="img-arrow"
               src="./leftarrow.png"
-              onClick={this.handleCarouselMoveRight}/>        
+              onClick={this.handleCarouselMoveLeft}/>        
           </div>
           <List data={this.state}/>
           <div 
@@ -71,7 +76,7 @@ class App extends React.Component {
             <img 
               className="img-arrow"
               src="./rightarrow.png"
-              onClick={this.handleCarouselMoveLeft}/>         
+              onClick={this.handleCarouselMoveRight}/>         
           </div>
         </div>
       </div>
