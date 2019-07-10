@@ -8,10 +8,13 @@ class App extends React.Component {
     super()
 
     this.state = {
-      list : []
+      list : [],
+      position: 0
     }
 
     this.handleFetch = this.handleFetch.bind(this);
+    this.handleCarouselMoveRight = this.handleCarouselMoveRight.bind(this);
+    this.handleCarouselMoveLeft = this.handleCarouselMoveLeft.bind(this);
   }
 
   componentDidMount() {
@@ -27,14 +30,25 @@ class App extends React.Component {
         this.setState({
           list: listArr
         })
-        // console.log(this.state.list)
       })
       .catch((error) => {
         console.log('error fetching data', error);
       })
-
   }
 
+  handleCarouselMoveRight() {
+    this.setState({
+      position: this.state.position - 348
+    })
+  }
+
+  handleCarouselMoveLeft() {
+    this.setState({
+      position: this.state.position + 348
+    })
+  }
+
+  
   render() {
     return(
       <div 
@@ -42,8 +56,24 @@ class App extends React.Component {
         <div 
           className="section-header">More places to stay
         </div>
-        <div></div>
-        <List data={this.state.list}/>
+        <div
+          className="inner-container">
+          <div 
+            className="left-arrow">
+            <img 
+              className="img-arrow"
+              src="./leftarrow.png"
+              onClick={this.handleCarouselMoveRight}/>        
+          </div>
+          <List data={this.state}/>
+          <div 
+            className="right-arrow">
+            <img 
+              className="img-arrow"
+              src="./rightarrow.png"
+              onClick={this.handleCarouselMoveLeft}/>         
+          </div>
+        </div>
       </div>
     )
   }
