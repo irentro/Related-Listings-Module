@@ -10,8 +10,13 @@ body {
   margin: 0 auto;
 }
 
+.inner-container {
+  display: flex
+}
+
 .section-header {
   font-size: 24px;
+  font-weight: bold;
   padding-bottom: 24px;
 }
 
@@ -19,24 +24,25 @@ body {
   width: 100%;
   display: flex;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   margin: 0 auto;
 }
 
 .list-item-wrapper {
   width: 33.3333%;
   height: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
-  position: relative
+  padding-left: 14px;
+  padding-right: 14px;
+  position: relative;
+  margin-left: -12px;
 }
 
 .list-item-detail-wrapper {
-  padding-top: 12px
+  padding-top: 12px;
 }
 
 .list-item-image {
-  width: 330px;
+  width: 332px;
   height: 222px;
   border-radius: 5px
 }
@@ -51,10 +57,14 @@ body {
   padding-bottom: 3px
 }
 
+.list-item-city {
+  padding-left: 8px
+}
+
 .list-item-title {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 22px;
-  font-weight: 1000;
+  font-weight: bold;
   padding-bottom: 3px
 }
 
@@ -69,4 +79,42 @@ body {
   font-size: 12px;
   line-height: 16px; 
   font-weight: 600;
+  padding-left: 5px
 }
+
+.left-arrow {
+  float:left;
+  margin-left: -20px;
+  margin-top: 95px;
+}
+
+.right-arrow {
+  float:right;
+  margin-top: 95px;
+  margin-right: -20px
+}
+
+.img-arrow {
+  height: 24px
+}
+
+.img-heart {
+  height: 24px;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+.list-item-star-wrapper {
+  display: flex;
+  padding-top: 3px
+}
+
+.list-item-review-wrapper {
+  display: flex;
+}
+
+.list-item-star {
+  height: 9px
+}
+
