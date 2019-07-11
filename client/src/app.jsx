@@ -19,7 +19,6 @@ class App extends React.Component {
     this.handleFetch = this.handleFetch.bind(this);
     this.handleCarouselMoveRight = this.handleCarouselMoveRight.bind(this);
     this.handleCarouselMoveLeft = this.handleCarouselMoveLeft.bind(this);
-    // this.handleRenderModal=this.handleRenderModal.bind(this);
     this.handleUpdateModalView=this.handleUpdateModalView.bind(this);
   }
 
@@ -63,21 +62,7 @@ class App extends React.Component {
       modal: !this.state.modal,
       current: e
     })
-    // this.setState({
-    //   modal: !this.state.modal,
-    //   current: e
-    // }, () => {
-    //   this.handleRenderModal(e)
-    // })
   }
-
-  // handleRenderModal(e) {
-  //   if(this.state.modal) {
-  //     // console.log('passing over')
-  //     return <ListModal />
-  //   }
-  // }
-
   
   render() {
     const modalView = this.state.modal
@@ -85,7 +70,10 @@ class App extends React.Component {
     return(
       <div 
         className="outter-container">
-        {modalView ? (<ListModal data={this.state}/>) : console.log('modal turned off')}
+        {modalView ? 
+          (<ListModal 
+            data={this.state}
+            closeModal={this.handleUpdateModalView}/>) : console.log('modal turned off')}
         <div 
           className="section-header">More places to stay
         </div>
