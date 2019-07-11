@@ -12,7 +12,7 @@ class ListModal extends React.Component {
 
 
     return(
-      <div className="modal-background">
+      <div>
         <div className="modal-save-list">
           <div className="modal-header">Save to list</div>
           <div className="modal-list-inner">
@@ -23,7 +23,9 @@ class ListModal extends React.Component {
             </div>
           </div>
         </div>
+        <div className="modal-background"></div>
       </div>
+
     )
   }
 }
