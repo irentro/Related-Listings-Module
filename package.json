@@ -1,5 +1,11 @@
 {
   "name": "rentro-recommendations",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,20 +13,21 @@
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
     "start-client": "live-server",
-    "test": "jest ./spec/server.test.js",
+    "test": "jest",
     "seed": "node database/seed.js"
   },
   "author": "Shane Zhao",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^24.8.0",
     "axios": "^0.19.0",
     "babel-core": "^6.23.1",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^6.3.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.23.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "jest": "^24.8.0",
     "puppeteer": "^1.18.1",
     "supertest": "^4.0.2",
     "webpack": "^2.2.1"

@@ -7,7 +7,7 @@ const cors = require('cors')
 
 app.use(express.json());
 app.use(express.static('client/dist'));
-app.unsubscribe(cors())
+app.use(cors())
 
 
 app.get('/recommendations', (req, res) => {
@@ -43,3 +43,5 @@ app.post('/recommendations/seed', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 });
+
+// module.exports = app;

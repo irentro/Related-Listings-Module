@@ -1,18 +1,11 @@
-const puppeteer = require('puppeteer');
 const request = require('supertest');
 const Model = require('../database/index.js')
 const app = require('../server/index.js')
 
 
-describe('sum of a + b', function() {
-  test('should be 3', function() {
-    expect(app.sum(1, 2)).toBe(3);
-  });
-});
-
 describe('GET request', function() {
   
-  beforEach(async ()=> {
+  beforeEach(async ()=> {
     let obj = {
       saved: false,
       imageUrl: "https://rentro-listing.s3-us-west-1.amazonaws.com/image0.jpg",
@@ -40,9 +33,12 @@ describe('GET request', function() {
   })
 
   afterEach(async ()=> {
-    await Model.Rec.remove({title: "Chateau on the Hill"}, (err) => {
-      if(!err) {
-        console.log('test record removed')
+    await Model.Rec.remove({title: "Chateau on the Hill"}, (err, result) => {
+      if(err) {
+        console.log('error', err)
+      }
+      else {
+        console.log('test record removed', result)
       }
     })
   })
