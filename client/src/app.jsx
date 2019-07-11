@@ -2,6 +2,7 @@ import React from 'react';
 const axios = require('axios');
 const faker = require('faker');
 import List from './list.jsx';
+import ListModal from './listModal.jsx'
 
 class App extends React.Component {
   constructor() {
@@ -9,12 +10,17 @@ class App extends React.Component {
 
     this.state = {
       list : [],
-      position: 0
+      position: 0,
+      modal: false,
+      current: 0,
+      favoriteLists: ["Weekend Trip", "Getaway", "Dream Home"]
     }
 
     this.handleFetch = this.handleFetch.bind(this);
     this.handleCarouselMoveRight = this.handleCarouselMoveRight.bind(this);
     this.handleCarouselMoveLeft = this.handleCarouselMoveLeft.bind(this);
+    // this.handleRenderModal=this.handleRenderModal.bind(this);
+    this.handleUpdateModalView=this.handleUpdateModalView.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +43,6 @@ class App extends React.Component {
   }
 
   handleCarouselMoveRight() {
-
     if(this.state.position >= -2784) {
       this.setState({
         position: this.state.position - 348
@@ -53,11 +58,34 @@ class App extends React.Component {
     }
   }
 
+  handleUpdateModalView(e) {
+    this.setState({
+      modal: !this.state.modal,
+      current: e
+    })
+    // this.setState({
+    //   modal: !this.state.modal,
+    //   current: e
+    // }, () => {
+    //   this.handleRenderModal(e)
+    // })
+  }
+
+  // handleRenderModal(e) {
+  //   if(this.state.modal) {
+  //     // console.log('passing over')
+  //     return <ListModal />
+  //   }
+  // }
+
   
   render() {
+    const modalView = this.state.modal
+
     return(
       <div 
         className="outter-container">
+        {modalView ? (<ListModal data={this.state}/>) : console.log('modal turned off')}
         <div 
           className="section-header">More places to stay
         </div>
@@ -70,7 +98,9 @@ class App extends React.Component {
               src="./leftarrow.png"
               onClick={this.handleCarouselMoveLeft}/>        
           </div>
-          <List data={this.state}/>
+          <List 
+            data={this.state}
+            modal={this.handleUpdateModalView}/>
           <div 
             className="right-arrow">
             <img 
