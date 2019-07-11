@@ -17,36 +17,46 @@ class ListModal extends React.Component {
     const favList = this.props.data.favoriteLists;
     const id = this.props.data.current;
     const listData = this.props.data.list;
+    const record = [];
+     
+    //Find current list item obj and save to record
+    for(var i = 0; i <listData.length; i++) {
+      if(listData[i]._id === id) {
+        record.push(listData[i]);
+      }
+    }
 
     return(
       <div>
         <div className="modal-save-list">
-          <DetailsModal />
-          <div 
-            className="icon-x-container"
-            onClick={this.handleCloseModal}>
-            <img className="icon-x" src="./icon-x.png"/>
-          </div>
-          <div className="section-header">Save to list</div>
-          <div className="modal-list-inner">
-            <div className="modal-list-wrapper">
-              <div 
-                className="modal-create-list blue-font"
-                >Create New List</div>
+          <DetailsModal data={record}/>
+          <div className="modal-wrapper">
+            <div 
+              className="icon-x-container"
+              onClick={this.handleCloseModal}>
+              <img className="icon-x" src="./icon-x.png"/>
             </div>
-            <div>
-              {favList.map(item => 
+            <div className="section-header">Save to list</div>
+            <div className="modal-list-inner">
+              <div className="modal-list-wrapper">
                 <div 
-                  key={item}
-                  className="modal-list-wrapper">
-                    <div className="modal-favlist-entry">{item}</div>
-                    <div>
-                      <img 
-                        className="icon-heart-line" 
-                        src="./heart-line.png"/>
-                    </div>
-                </div>
-                )}
+                  className="modal-create-list blue-font"
+                  >Create New List</div>
+              </div>
+              <div>
+                {favList.map(item => 
+                  <div 
+                    key={item}
+                    className="modal-list-wrapper">
+                      <div className="modal-favlist-entry">{item}</div>
+                      <div>
+                        <img 
+                          className="icon-heart-line" 
+                          src="./heart-line.png"/>
+                      </div>
+                  </div>
+                  )}
+              </div>
             </div>
           </div>
         </div>
