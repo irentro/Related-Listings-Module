@@ -147,6 +147,7 @@ body {
   width: 500px;
   height: 605px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .icon-x {
@@ -159,7 +160,7 @@ body {
 }
 
 .modal-list-inner {
-  overflow: hidden
+  overflow: auto
 }
 
 .modal-list-wrapper {
@@ -171,7 +172,7 @@ body {
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  border-color: rgba(0, 0, 0, 0.2)
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 .modal-favlist-entry {
@@ -190,14 +191,16 @@ body {
 }
 
 /* Inner Modal CSS */
-
 .modal-inner-wrapper {
   z-index: 15;
-  width: 100%;
-  margin-left: 34px;
-  margin-right: 34px;
-  margin-top: 30px;
-  margin-bottom: 34px
+  position: absolute;
+  /* width: 100%; */
+  padding-left: 34px;
+  padding-right: 34px;
+  padding-bottom: 34px;
+  overflow: auto;
+  background-color: white;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5)
 }
 
 .modal-inner-thumbnail {
@@ -206,8 +209,8 @@ body {
   height: 80px;
 }
 
-.modal-inner-location {
-  display: flex
+.modal-inner-location-detail {
+  padding-right: 3px;
 }
 
 .modal-inner-location {
@@ -215,20 +218,45 @@ body {
   font-size: 14px;
   line-height: 18px; 
   font-weight: 200;
-  padding-bottom: 3px
+  padding-bottom: 5px
 }
 
 .modal-inner-header {
-  display: flex
+  padding-top: 30px;
+  display: flex;
+  padding-bottom: 26px
 }
 
 .modal-inner-header-wrapper {
+  /* overflow-wrap: normal; */
   padding-left: 18px
 }
 
 .modal-inner-title {
   font-size: 16px;
   line-height: 22px;
-  font-weight: 400;
-  padding-bottom: 3px
+  font-weight: 500;
+  padding-bottom: 5px
+}
+
+.modal-inner-reviewcount {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.modal-inner-section {
+  padding-top: 25px;
+  border-style: solid;
+  border-width: .75px;
+  padding-bottom: 25px;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-color: rgba(0, 0, 0, 0.2)
+}
+
+.modal-inner-p {
+  font-size: 14px;
+  line-height: 18px; 
+  font-weight: 200;
 }
