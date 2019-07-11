@@ -2,6 +2,9 @@
   "name": "rentro-recommendations",
   "jest": {
     "verbose": true,
+    "setupFilesAfterEnv": [
+      "./spec/setupTests.js"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     }
@@ -19,18 +22,19 @@
   "author": "Shane Zhao",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^24.8.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
     "axios": "^0.19.0",
-    "babel-core": "^6.23.1",
+    "babel-core": "^6.26.3",
     "babel-jest": "^24.8.0",
-    "babel-loader": "^6.3.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.23.0",
+    "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "puppeteer": "^1.18.1",
+    "jest": "^24.8.0",
     "supertest": "^4.0.2",
-    "webpack": "^2.2.1"
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -39,8 +43,8 @@
     "jquery": "^3.4.1",
     "mongoose": "^5.6.3",
     "nodemon": "^1.19.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "underscore": "^1.9.1"
   }
 }
