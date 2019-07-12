@@ -25,14 +25,20 @@ class List extends React.Component {
             className="list-item-wrapper"
             style={position}
             key={item._id}>
+    
             <div 
               className="heart-click"
               name={item._id}
               onClick={this.handleSelectItem}>
-              <img 
-                className="img-heart"
-                name={item._id}
-                src="./heart-unfilled.png"/>
+              {item.favoriteList > 0 ? 
+                (<img 
+                  className="img-heart"
+                  name={item._id}
+                  src="./heart-filled.png"/>) : 
+                (<img 
+                  className="img-heart"
+                  name={item._id}
+                  src="./heart-unfilled.png"/>)}
             </div>
             <img
               className="list-item-image"

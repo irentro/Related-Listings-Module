@@ -25,6 +25,7 @@ class DetailsModal extends React.Component {
       transition: `0.5s`,
       transform: `translateY(${y}px)`
     }
+
     return(
 
       <div 
@@ -32,7 +33,7 @@ class DetailsModal extends React.Component {
         style={detailsPosition}>
 
           <div 
-            className="modal-inner-header-wrapper"
+            className="modal-inner-header-container"
             onClick={this.handleMoveDetailsModal}>
 
 

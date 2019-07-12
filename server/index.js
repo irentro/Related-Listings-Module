@@ -22,23 +22,64 @@ app.get('/recommendations', (req, res) => {
 })
 
 app.post('/recommendations/seed', (req, res) => {
-    let obj = req.body;
-    if(req.body.saved === 0) {
-      obj.saved = false;
+  let obj = req.body;
+  if(req.body.saved === 0) {
+    obj.saved = false;
+  }
+  else if (req.body.saved === 1) {
+    obj.saved = true;
+  }
+
+  Model.save(obj, (err) => {
+    if(err){
+      res.status(400).send('save error')
     }
-    else if (req.body.saved === 1) {
-      obj.saved = true;
+    else{
+      res.status(200).send('saved')
     }
-    console.log('post obj', obj)
-    Model.save(obj, (err) => {
-      if(err){
-        res.status(400).send('save error')
-      }
-      else{
-        res.status(200).send('saved')
-      }
-    })
+  })
 })
+
+app.post('/recommendations/save', (req, res) => {
+  let id = req.body.id;
+  let listName = req.body.listName;
+
+  Model.Rec.find({_id: id}, (err, results) => {
+    if(err) {
+      res.status(400).send(err)
+    }
+    else {
+      let updatedList = results[0].favoriteList.push(listName)
+      Model.Rec.updateOne({_id: id}, {favoriteList: updatedList}, (err) => {
+        if(!err) {
+          res.status(200).send('item saved to list')
+        }
+      })
+    }
+  })
+  
+
+  // let obj = req.body;
+  // if(req.body.saved === 0) {
+  //   obj.saved = false;
+  // }
+  // else if (req.body.saved === 1) {
+  //   obj.saved = true;
+  // }
+
+  // Model.save(obj, (err) => {
+  //   if(err){
+  //     res.status(400).send('save error')
+  //   }
+  //   else{
+  //     res.status(200).send('saved')
+  //   }
+  // })
+})
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)

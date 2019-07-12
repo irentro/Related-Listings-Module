@@ -6,11 +6,20 @@ class ListModal extends React.Component {
     super(props)
 
     this.handleCloseModal=this.handleCloseModal.bind(this);
+    this.handleSaveToList=this.handleSaveToList.bind(this);
   }
 
 
   handleCloseModal() {
     this.props.closeModal();
+  }
+
+  handleSaveToList(e) {
+    let obj = {
+      id: e.target.getAttribute('idtag'),
+      listName: e.target.getAttribute('listname')
+    }
+    this.props.saveToList(obj)
   }
  
   render() {
@@ -18,6 +27,7 @@ class ListModal extends React.Component {
     const id = this.props.data.current;
     const listData = this.props.data.list;
     const record = [];
+    // const saved = this.props.data.favoriteList;
      
     //Find current list item obj and save to record
     for(var i = 0; i <listData.length; i++) {
@@ -47,12 +57,29 @@ class ListModal extends React.Component {
                 {favList.map(item => 
                   <div 
                     key={item}
-                    className="modal-list-wrapper">
-                      <div className="modal-favlist-entry">{item}</div>
+                    idtag={id}
+                    listname={item}
+                    className="modal-list-wrapper"
+                    onClick={this.handleSaveToList}>
+                      <div 
+                      idtag={id}
+                      listname={item}
+                      className="modal-favlist-entry">{item}
+                      </div>
                       <div>
-                        <img 
+                        {record[0].favoriteList.includes(item) ?
+                        (<img 
                           className="icon-heart-line" 
-                          src="./heart-line.png"/>
+                          src="./heart-solid.png"
+                          idtag={id}
+                          listname={item}>
+                        </img>) : 
+                        (<img 
+                          className="icon-heart-line" 
+                          src="./heart-line.png"
+                          idtag={id}
+                          listname={item}>
+                        </img>)}  
                       </div>
                   </div>
                   )}

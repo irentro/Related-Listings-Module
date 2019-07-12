@@ -23,6 +23,7 @@ const populate = () => {
     let mockAbout = faker.lorem.paragraph(aboutLength);
     let mockSpace = faker.lorem.paragraph(1);
     let mockNeighborhood = faker.lorem.paragraph(1);
+    let mockList = [];
 
     //Generate random number of reviews per record
     // let reviewCount = faker.random.number({min:0, max:8});
@@ -63,6 +64,7 @@ const populate = () => {
       about: mockAbout,
       space: mockSpace,
       neighborhood: mockNeighborhood,
+      favoriteList: mockList,
       reviews: reviewsArr
     }
 
@@ -76,7 +78,6 @@ const populate = () => {
     })
     
     imageCounter++;
-    // console.log(recordObj);
   }
 }
 
