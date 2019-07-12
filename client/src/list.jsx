@@ -30,7 +30,7 @@ class List extends React.Component {
               className="heart-click"
               name={item._id}
               onClick={this.handleSelectItem}>
-              {item.favoriteList > 0 ? 
+              {item.favoriteList.length > 0 ? 
                 (<img 
                   className="img-heart"
                   name={item._id}
