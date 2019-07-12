@@ -4,16 +4,28 @@ import DetailsModal from './detailsModal.jsx'
 class ListModal extends React.Component {
   constructor(props) {
     super(props)
-    
-    // console.log('ListModal props', this.props.data.list)
+
+    this.state=({
+      saved: false
+    })
 
     this.handleCloseModal=this.handleCloseModal.bind(this);
     this.handleSaveToList=this.handleSaveToList.bind(this);
+    this.handleToggleSave=this.handleToggleSave.bind(this);
   }
-
 
   handleCloseModal() {
     this.props.closeModal();
+  }
+
+  handleToggleSave(e) {
+    e.persist();
+    this.setState({
+      saved: !this.state.saved
+    }, () => {
+      this.handleSaveToList(e);
+    })
+    
   }
 
   handleSaveToList(e) {
@@ -21,19 +33,16 @@ class ListModal extends React.Component {
       id: e.target.getAttribute('idtag'),
       listName: e.target.getAttribute('listname')
     }
-    this.props.saveToList(obj)
+
+    this.state.saved ? this.props.saveToList(obj) : this.props.unSaveToList(obj);
   }
  
   render() {
-    // const { favList, id, listData } = this.props.data;
     const favList = this.props.data.favoriteLists;
     const id = this.props.data.current;
     const listData = this.props.data.list;
     const record = [];
 
-     
-    console.log('record', record)
-    
     // Find current list item obj and save to record
     for(var i = 0; i <listData.length; i++) {
       if(listData[i]._id === id) {
@@ -65,7 +74,7 @@ class ListModal extends React.Component {
                     idtag={id}
                     listname={item}
                     className="modal-list-wrapper"
-                    onClick={this.handleSaveToList}>
+                    onClick={this.handleToggleSave}>
                       <div 
                       idtag={id}
                       listname={item}

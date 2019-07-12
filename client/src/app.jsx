@@ -23,6 +23,7 @@ class App extends React.Component {
     this.handleUpdateModalView=this.handleUpdateModalView.bind(this);
     this.handleSave=this.handleSave.bind(this);
     this.handlePostFetch=this.handlePostFetch.bind(this);
+    this.handleUnSave=this.handleUnSave.bind(this);
   }
 
   componentDidMount() {
@@ -70,7 +71,17 @@ class App extends React.Component {
   handleSave(value) {
     axios.post('http://127.0.0.1:4001/recommendations/save', value)
     .then((response) => {
-      console.log('hello handleSave success')
+      this.handlePostFetch()
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  handleUnSave(value) {
+    axios.post('http://127.0.0.1:4001/recommendations/unsave', value)
+    .then((response) => {
+      console.log('hello unhandleSave success')
       this.handlePostFetch()
     })
     .catch(function (error) {
@@ -110,6 +121,7 @@ class App extends React.Component {
           (<ListModal 
             data={this.state}
             saveToList={this.handleSave}
+            unSaveToList={this.handleUnSave}
             closeModal={this.handleUpdateModalView}/>) : <div></div>}
         <div 
           className="section-header">More places to stay
