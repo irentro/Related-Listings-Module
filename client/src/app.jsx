@@ -13,13 +13,14 @@ class App extends React.Component {
       position: 0,
       modal: false,
       current: 0,
-      favoriteLists: ["Weekend Trip", "Getaway", "Dream Home"]
+      favoriteLists: ["Weekend Trip", "Getaway", "Dream Home"],
     }
 
     this.handleFetch = this.handleFetch.bind(this);
     this.handleCarouselMoveRight = this.handleCarouselMoveRight.bind(this);
     this.handleCarouselMoveLeft = this.handleCarouselMoveLeft.bind(this);
     this.handleUpdateModalView=this.handleUpdateModalView.bind(this);
+    this.handleSave=this.handleSave.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +40,19 @@ class App extends React.Component {
       .catch((error) => {
         console.log('error fetching data', error);
       })
+  }
+
+
+  handleSave(value) {
+    axios.post('http://127.0.0.1:4001/recommendations/save', value)
+    .then((response) => {
+      this.handleFetch()
+      // let fetch = this.handleFetch.bind(this);
+      // fetch()
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   handleCarouselMoveRight() {
@@ -73,6 +87,7 @@ class App extends React.Component {
         {modalView ? 
           (<ListModal 
             data={this.state}
+            saveToList={this.handleSave}
             closeModal={this.handleUpdateModalView}/>) : console.log('modal turned off')}
         <div 
           className="section-header">More places to stay

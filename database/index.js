@@ -15,6 +15,7 @@ let recSchema = mongoose.Schema({
   about: String,
   space: String,
   neighborhood: String,
+  favoriteList: [String],
   reviews: [
     {
       name: String,
@@ -27,7 +28,6 @@ let recSchema = mongoose.Schema({
 const Rec = mongoose.model('Recommendations', recSchema);
 
 let save = (obj, callback) => {
-  console.log('hello database save')
   const userRec = new Rec(obj);
   userRec.save((err) => {
     if(err) {
