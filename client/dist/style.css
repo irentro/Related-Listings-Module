@@ -107,7 +107,12 @@ body {
 
 .list-item-star-wrapper {
   display: flex;
-  padding-top: 3px
+  padding-top: 3px;
+}
+
+.reviews-stars-wrapper {
+  padding-top: 2px;
+  padding-right: 3px
 }
 
 .list-item-review-wrapper {
@@ -116,6 +121,10 @@ body {
 
 .list-item-star {
   height: 9px
+}
+
+.reviews-star {
+  height: 12px
 }
 
 /* Modal CSS */
@@ -198,6 +207,7 @@ body {
   padding-left: 34px;
   padding-right: 34px;
   padding-bottom: 34px;
+  height: 100%;
   overflow: auto;
   background-color: white;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5)
@@ -225,6 +235,15 @@ body {
   padding-top: 30px;
   display: flex;
   padding-bottom: 26px
+}
+
+.modal-inner-header-caret {
+  padding-top: 30px;
+  padding-bottom: 5px
+}
+
+.icon-caret {
+  width: 15px
 }
 
 .modal-inner-header-wrapper {
@@ -260,3 +279,29 @@ body {
   line-height: 18px; 
   font-weight: 200;
 }
+
+/* Reviews */
+.review-section {
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.review-name {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+.review-date {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 200;
+  padding-bottom: 10px
+}
+
+.review-comment {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 200;
+}
+
