@@ -9,6 +9,7 @@ class App extends React.Component {
     super()
 
     this.state = {
+      index: 0,
       list : [],
       position: 0,
       modal: false,
@@ -21,6 +22,7 @@ class App extends React.Component {
     this.handleCarouselMoveLeft = this.handleCarouselMoveLeft.bind(this);
     this.handleUpdateModalView=this.handleUpdateModalView.bind(this);
     this.handleSave=this.handleSave.bind(this);
+    this.handlePostFetch=this.handlePostFetch.bind(this);
   }
 
   componentDidMount() {
@@ -30,25 +32,46 @@ class App extends React.Component {
   handleFetch() {
     axios.get('http://127.0.0.1:4001/recommendations')
       .then((response) => {
+        
         let startIndex = faker.random.number({min:0, max:88});
         let listArr = response.data.slice(startIndex, startIndex + 12)
 
         this.setState({
+          index: startIndex,
           list: listArr
+        }, () => {
+          console.log('Fetch State', this.state)
         })
       })
       .catch((error) => {
         console.log('error fetching data', error);
       })
   }
-
+ 
+  handlePostFetch() {
+    console.log('hello handlePostFetch')
+    axios.get('http://127.0.0.1:4001/recommendations')
+    .then((response) => {
+      
+      let startIndex = this.state.index;
+      let listArr = response.data.slice(startIndex, startIndex + 12)
+      console.log('listArr', listArr)
+      this.setState({
+        list: listArr
+      }, () => {
+        console.log('Fetch State', this.state)
+      })
+    })
+    .catch((error) => {
+      console.log('error fetching data', error);
+    })   
+  }
 
   handleSave(value) {
     axios.post('http://127.0.0.1:4001/recommendations/save', value)
     .then((response) => {
-      this.handleFetch()
-      // let fetch = this.handleFetch.bind(this);
-      // fetch()
+      console.log('hello handleSave success')
+      this.handlePostFetch()
     })
     .catch(function (error) {
       console.log(error);
@@ -80,7 +103,6 @@ class App extends React.Component {
   
   render() {
     const modalView = this.state.modal
-
     return(
       <div 
         className="outter-container">
@@ -88,7 +110,7 @@ class App extends React.Component {
           (<ListModal 
             data={this.state}
             saveToList={this.handleSave}
-            closeModal={this.handleUpdateModalView}/>) : console.log('modal turned off')}
+            closeModal={this.handleUpdateModalView}/>) : <div></div>}
         <div 
           className="section-header">More places to stay
         </div>

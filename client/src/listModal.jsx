@@ -4,6 +4,8 @@ import DetailsModal from './detailsModal.jsx'
 class ListModal extends React.Component {
   constructor(props) {
     super(props)
+    
+    // console.log('ListModal props', this.props.data.list)
 
     this.handleCloseModal=this.handleCloseModal.bind(this);
     this.handleSaveToList=this.handleSaveToList.bind(this);
@@ -23,20 +25,23 @@ class ListModal extends React.Component {
   }
  
   render() {
+    // const { favList, id, listData } = this.props.data;
     const favList = this.props.data.favoriteLists;
     const id = this.props.data.current;
     const listData = this.props.data.list;
     const record = [];
-    // const saved = this.props.data.favoriteList;
+
      
-    //Find current list item obj and save to record
+    console.log('record', record)
+    
+    // Find current list item obj and save to record
     for(var i = 0; i <listData.length; i++) {
       if(listData[i]._id === id) {
         record.push(listData[i]);
       }
     }
 
-    return(
+    return (
       <div>
         <div className="modal-save-list">
           <DetailsModal data={record}/>
@@ -89,7 +94,6 @@ class ListModal extends React.Component {
         </div>
         <div className="modal-background"></div>
       </div>
-
     )
   }
 }

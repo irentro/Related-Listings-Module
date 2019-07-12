@@ -11,6 +11,7 @@ app.use(cors())
 
 
 app.get('/recommendations', (req, res) => {
+  console.log('Hello Get')
   Model.Rec.find({}, (err, results) => {
     if(err) {
       res.status(400).send('error')
@@ -49,36 +50,20 @@ app.post('/recommendations/save', (req, res) => {
       res.status(400).send(err)
     }
     else {
-      let updatedList = results[0].favoriteList.push(listName)
-      Model.Rec.updateOne({_id: id}, {favoriteList: updatedList}, (err) => {
-        if(!err) {
-          res.status(200).send('item saved to list')
+      results[0].favoriteList.push(listName);
+      let updatedList = results[0].favoriteList;
+      console.log('updatedList', updatedList)
+      Model.Rec.updateOne({_id: id}, {favoriteList: updatedList}, (err, results) => {
+        if(err) {
+          res.status(400).send('save error')
+        }
+        else {
+          res.status(200).send('save success')
         }
       })
     }
   })
-  
-
-  // let obj = req.body;
-  // if(req.body.saved === 0) {
-  //   obj.saved = false;
-  // }
-  // else if (req.body.saved === 1) {
-  //   obj.saved = true;
-  // }
-
-  // Model.save(obj, (err) => {
-  //   if(err){
-  //     res.status(400).send('save error')
-  //   }
-  //   else{
-  //     res.status(200).send('saved')
-  //   }
-  // })
 })
-
-
-
 
 
 app.listen(port, () => {
