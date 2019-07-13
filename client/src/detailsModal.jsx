@@ -9,8 +9,6 @@ class DetailsModal extends React.Component {
       positionY: false
     }
 
-    console.log('DetailsModal prop', this.prop)
-
     this.handleMoveDetailsModal=this.handleMoveDetailsModal.bind(this)
   }
 
