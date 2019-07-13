@@ -86,7 +86,7 @@ class ListModal extends React.Component {
                           className="icon-heart-line" 
                           src="./heart-solid.png"
                           idtag={id}
-                          listname={item}>
+                          listname={item}> 
                         </img>) : 
                         (<img 
                           className="icon-heart-line" 
