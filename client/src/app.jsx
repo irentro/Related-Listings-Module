@@ -50,7 +50,6 @@ class App extends React.Component {
   }
  
   handlePostFetch() {
-    console.log('hello handlePostFetch')
     axios.get('http://127.0.0.1:4001/recommendations')
     .then((response) => {
       
@@ -74,18 +73,17 @@ class App extends React.Component {
       this.handlePostFetch()
     })
     .catch(function (error) {
-      console.log(error);
+      console.log('handelSave', error);
     });
   }
 
   handleUnSave(value) {
     axios.post('http://127.0.0.1:4001/recommendations/unsave', value)
     .then((response) => {
-      console.log('hello unhandleSave success')
       this.handlePostFetch()
     })
     .catch(function (error) {
-      console.log(error);
+      console.log('handleUnSave', error);
     });
   }
 

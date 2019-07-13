@@ -1,4 +1,5 @@
 import React from 'react';
+import DetailsBody from './detailsBody.jsx';
 
 class DetailsModal extends React.Component {
   constructor(props) {
@@ -7,6 +8,8 @@ class DetailsModal extends React.Component {
     this.state = {
       positionY: false
     }
+
+    console.log('DetailsModal prop', this.prop)
 
     this.handleMoveDetailsModal=this.handleMoveDetailsModal.bind(this)
   }
@@ -88,32 +91,7 @@ class DetailsModal extends React.Component {
             </div>
           </div>
           
-          <div className="modal-inner-section">
-            <div className="modal-inner-title">About this listing</div>
-            <div className="modal-inner-p">{this.props.data[0].about}</div>
-          </div>
-          <div className="modal-inner-section">
-            <div className="modal-inner-title">The space</div>
-            <div className="modal-inner-p">{this.props.data[0].space}</div>
-          </div>
-          <div className="modal-inner-section">
-            <div className="modal-inner-title"> Neighborhod</div>
-            <div className="modal-inner-p">{this.props.data[0].neighborhood}</div>
-          </div>
-          <div className="modal-inner-section">
-            <div className="modal-inner-title">Reviews</div>
-            <div>
-              {this.props.data[0].reviews.map(item =>
-                <div 
-                  key={item.name}
-                  className="review-section">
-                    <div className="review-name">{item.name}</div>
-                    <div className="review-date">{item.date}</div>
-                    <div className="review-comment">{item.comment}</div>
-                </div>)}
-            </div>
-          </div>
-
+          <DetailsBody details={this.props.data}/>
       </div>
     )
   }
