@@ -74,7 +74,8 @@ class ListModal extends React.Component {
                 <div className="modal-list-wrapper">
                   {this.state.formShow ? 
                   <CreateList 
-                    formView={this.handleFormView}/> :
+                    formView={this.handleFormView}
+                    updateList={this.props.updateList}/> :
                   <div 
                     className="modal-create-list blue-font"
                     onClick={this.handleFormView}

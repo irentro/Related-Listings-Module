@@ -24,6 +24,7 @@ class App extends React.Component {
     this.handleSave=this.handleSave.bind(this);
     this.handlePostFetch=this.handlePostFetch.bind(this);
     this.handleUnSave=this.handleUnSave.bind(this);
+    this.handleUpdateList=this.handleUpdateList.bind(this);
   }
 
   componentDidMount() {
@@ -109,6 +110,14 @@ class App extends React.Component {
       current: e
     })
   }
+
+  handleUpdateList (value) {
+    this.state.favoriteLists.unshift(value);
+    let newList = this.state.favoriteLists;
+    this.setState({
+      favoriteLists: newList
+    })
+  }
   
   render() {
     const modalView = this.state.modal
@@ -120,6 +129,7 @@ class App extends React.Component {
             data={this.state}
             saveToList={this.handleSave}
             unSaveToList={this.handleUnSave}
+            updateList={this.handleUpdateList}
             closeModal={this.handleUpdateModalView}/>) : <div></div>}
         <div 
           className="section-header">More places to stay

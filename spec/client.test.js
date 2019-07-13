@@ -60,6 +60,8 @@ describe('React App test suite', () => {
   }
   component.handleCarouselMoveRight= () => { 
   }
+  component.handleUpdateList = () => {
+  }
 
   test('App should exist', () => {
     expect(component.exists()).toBe(true);
