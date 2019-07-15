@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../dist/style.css';
 
 class CreateList extends React.Component {
   constructor() {
@@ -42,11 +43,11 @@ class CreateList extends React.Component {
   
   render() {
     return (
-      <div className="form-wrapper">
-        <div className="form-title">Name</div>
+      <div className={styles.formWrapper}>
+        <div className={styles.formTitle}>Name</div>
         <form>
           <input 
-            className="form-field" 
+            className={styles.formField}
             type="search"
             onChange={this.handleFormValue}
             onKeyDown={this.handleInput}
@@ -54,13 +55,13 @@ class CreateList extends React.Component {
           <br></br>
           <input 
             type="submit" 
-            className="form-create"
+            className={styles.formCreate}
             onClick={this.handleCreateClick} 
             value="Create">
           </input>
           <input 
             type="submit" 
-            className="form-cancel" 
+            className={styles.formCancel}
             onClick={this.handleToggleFormView}
             value="Cancel" >
           </input>

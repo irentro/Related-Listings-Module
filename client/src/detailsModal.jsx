@@ -1,5 +1,6 @@
 import React from 'react';
 import DetailsBody from './detailsBody.jsx';
+import styles from '../dist/style.css';
 
 class DetailsModal extends React.Component {
   constructor(props) {
@@ -30,18 +31,18 @@ class DetailsModal extends React.Component {
     return(
 
       <div 
-        className="modal-inner-wrapper"
+        className={styles.modalInnerWrapper}
         style={detailsPosition}>
 
           <div 
-            className="modal-inner-header-container"
+            className={styles.modalInnerHeaderContainer}
             onClick={this.handleMoveDetailsModal}>
 
 
             <div>
               {this.state.positionY ? 
-                (<div className="modal-inner-header-caret">
-                  <img className="icon-caret" 
+                (<div className={styles.modalInnerHeaderCaret}>
+                  <img className={styles.iconCaret} 
                   src="./downarrow.png"/>
                 </div>) : 
                 (<div></div>
@@ -49,40 +50,40 @@ class DetailsModal extends React.Component {
             </div>
 
 
-            <div className="modal-inner-header">
+            <div className={styles.modalInnerHeader}>
               <img 
-                className="modal-inner-thumbnail" 
+                className={styles.modalInnerThumbnail} 
                 src={this.props.data[0].imageUrl} />
-              <div className="modal-inner-header-wrapper">
-                <div className="modal-inner-title">{this.props.data[0].title}</div>
-                <div className="modal-inner-location">
+              <div className={styles.modalInnerHeaderWrapper}>
+                <div className={styles.modalInnerTitle}>{this.props.data[0].title}</div>
+                <div className={styles.modalInnerLocation}>
                   <div 
-                    className="modal-inner-location-detail">
+                    className={styles.modalInnerLocationDetail}>
                     {`${this.props.data[0].city},`}</div>
                   <div
-                    className="modal-inner-location-detail">
+                    className={styles.modalInnerLocationDetail}>
                     {`${this.props.data[0].state},`}</div>
                   <div>{this.props.data[0].country}</div>
                 </div>
-                <div className="list-item-review-wrapper">
-                  <div className="list-item-star-wrapper reviews-stars-wrapper">
+                <div className={styles.listItemReviewWrapper}>
+                  <div className={[styles.listItemStarWrapper, styles.reviewsStarsWrapper]}>
                       <img 
-                        className="list-item-star reviews-star" 
+                        className={[styles.listItemStar, styles.reviewsStar]} 
                         src="./star-filled.svg"/>
                       <img 
-                        className="list-item-star reviews-star" 
+                        className={[styles.listItemStar, styles.reviewsStar]} 
                         src="./star-filled.svg"/>
                       <img 
-                        className="list-item-star reviews-star" 
+                        className={[styles.listItemStar, styles.reviewsStar]} 
                         src="./star-filled.svg"/>
                       <img 
-                        className="list-item-star reviews-star" 
+                        className={[styles.listItemStar, styles.reviewsStar]} 
                         src="./star-filled.svg"/>
                       <img 
-                        className="list-item-star reviews-star" 
+                        className={[styles.listItemStar, styles.reviewsStar]} 
                         src="./star-filled.svg"/>
                     </div>
-                  <div className="modal-inner-reviewcount">{this.props.data[0].reviewCount}
+                  <div className={styles.modalInnerReviewcount}>{this.props.data[0].reviewCount}
                   </div>
                 </div>
               </div>

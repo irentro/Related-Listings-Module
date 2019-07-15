@@ -1,6 +1,7 @@
 import React from 'react';
 import DetailsModal from './detailsModal.jsx';
 import CreateList from './createList.jsx';
+import styles from '../dist/style.css';
 
 class ListModal extends React.Component {
   constructor(props) {
@@ -60,24 +61,24 @@ class ListModal extends React.Component {
 
     return (
       <div>
-        <div className="modal-save-list">
+        <div className={styles.modalSaveList}>
           <DetailsModal data={record}/>
-          <div className="modal-wrapper">
+          <div className={styles.modalWrapper}>
             <div 
-              className="icon-x-container"
+              className={styles.iconXcontainer}
               onClick={this.handleCloseModal}>
-              <img className="icon-x" src="./icon-x.png"/>
+              <img className={styles.iconX} src="./icon-x.png"/>
             </div>
-            <div className="section-header">Save to list</div>
-            <div className="modal-wrapper-autoflow">
-              <div className="modal-list-inner">
-                <div className="modal-list-wrapper">
+            <div className={styles.sectionHeader}>Save to list</div>
+            <div className={styles.modalWrapperAutoflow}>
+              <div className={styles.modalListInner}>
+                <div className={styles.modalListWrapper}>
                   {this.state.formShow ? 
                   <CreateList 
                     formView={this.handleFormView}
                     updateList={this.props.updateList}/> :
                   <div 
-                    className="modal-create-list blue-font"
+                    className={styles.blueFont}
                     onClick={this.handleFormView}
                     >Create New List</div>}
                 </div>
@@ -87,23 +88,23 @@ class ListModal extends React.Component {
                       key={item}
                       idtag={id}
                       listname={item}
-                      className="modal-list-wrapper"
+                      className={styles.modalListWrapper}
                       onClick={this.handleToggleSave}>
                         <div 
                         idtag={id}
                         listname={item}
-                        className="modal-favlist-entry">{item}
+                        className={styles.modalFavlistEntry}>{item}
                         </div>
                         <div>
                           {record[0].favoriteList.includes(item) ?
                           (<img 
-                            className="icon-heart-line" 
+                            className={styles.iconHeartLine} 
                             src="./heart-solid.png"
                             idtag={id}
                             listname={item}> 
                           </img>) : 
                           (<img 
-                            className="icon-heart-line" 
+                            className={styles.iconHeartLine}
                             src="./heart-line.png"
                             idtag={id}
                             listname={item}>
@@ -116,7 +117,7 @@ class ListModal extends React.Component {
             </div>
           </div>
         </div>
-        <div className="modal-background"></div>
+        <div className={styles.modalBackground}></div>
       </div>
     )
   }
