@@ -1,5 +1,6 @@
 import React from 'react';
-const axios = require('axios');
+import axios from 'axios';
+// const axios = require('axios');
 const faker = require('faker');
 import List from './list.jsx';
 import ListModal from './listModal.jsx'
