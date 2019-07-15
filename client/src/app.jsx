@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-// const axios = require('axios');
-const faker = require('faker');
+import faker from 'faker';
 import List from './list.jsx';
-import ListModal from './listModal.jsx'
+import ListModal from './listModal.jsx';
+import styles from '../dist/style.css';
 
 class App extends React.Component {
   constructor() {
@@ -124,7 +124,7 @@ class App extends React.Component {
     const modalView = this.state.modal
     return(
       <div 
-        className="outter-container">
+        className={styles.outterContainer}>
         {modalView ? 
           (<ListModal 
             data={this.state}
@@ -133,14 +133,14 @@ class App extends React.Component {
             updateList={this.handleUpdateList}
             closeModal={this.handleUpdateModalView}/>) : <div></div>}
         <div 
-          className="section-header">More places to stay
+          className={styles.sectionHeader}>More places to stay
         </div>
         <div
-          className="inner-container">
+          className={styles.innerContainer}>
           <div 
-            className="left-arrow">
+            className={styles.leftArrow}>
             <img 
-              className="img-arrow"
+              className={styles.imgArrow}
               src="./leftarrow.png"
               onClick={this.handleCarouselMoveLeft}/>        
           </div>
@@ -148,9 +148,9 @@ class App extends React.Component {
             data={this.state}
             modal={this.handleUpdateModalView}/>
           <div 
-            className="right-arrow">
+            className={styles.rightArrow}>
             <img 
-              className="img-arrow"
+              className={styles.imgArrow}
               src="./rightarrow.png"
               onClick={this.handleCarouselMoveRight}/>         
           </div>

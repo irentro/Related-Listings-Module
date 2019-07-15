@@ -1,26 +1,26 @@
 
-body {
+:global(body) {
   font-family: system-ui;
   color: #484848;
 }
 
-.outter-container {
+.outterContainer {
   width: 1032px ;
   height: 432px;
   margin: 0 auto;
 }
 
-.inner-container {
+.innerContainer {
   display: flex
 }
 
-.section-header {
+.sectionHeader {
   font-size: 24px;
   font-weight: bold;
   padding-bottom: 24px;
 }
 
-.list-container {
+.listContainer {
   width: 100%;
   display: flex;
   position: relative;
@@ -28,7 +28,7 @@ body {
   margin: 0 auto;
 }
 
-.list-item-wrapper {
+.listItemWrapper {
   width: 33.3333%;
   height: 100%;
   padding-left: 14px;
@@ -37,17 +37,17 @@ body {
   margin-left: -12px;
 }
 
-.list-item-detail-wrapper {
+.listItemDetailWrapper {
   padding-top: 12px;
 }
 
-.list-item-image {
+.listItemImage {
   width: 332px;
   height: 222px;
   border-radius: 5px
 }
 
-.list-item-category {
+.listItemCategory {
   display: flex;
   color: #767676;
   font-size: 12px;
@@ -57,59 +57,59 @@ body {
   padding-bottom: 3px
 }
 
-.list-item-city {
+.listItemCity {
   padding-left: 8px
 }
 
-.list-item-title {
+.listItemTitle {
   font-size: 16px;
   line-height: 22px;
   font-weight: bold;
   padding-bottom: 3px
 }
 
-.list-item-price {
+.listItemPrice {
   font-size: 14px;
   line-height: 18px; 
   font-weight: 200;
   padding-bottom: 3px
 }
 
-.list-item-reviewCount {
+.listItemReviewCount {
   font-size: 12px;
   line-height: 16px; 
   font-weight: 600;
   padding-left: 5px
 }
 
-.left-arrow {
+.leftArrow {
   float:left;
   margin-left: -20px;
   margin-top: 95px;
 }
 
-.right-arrow {
+.rightArrow {
   float:right;
   margin-top: 95px;
   margin-right: -20px
 }
 
-.img-arrow {
+.imgArrow {
   height: 24px
 }
 
-.heart-click {
+.heartClick {
   cursor: pointer
 }
 
-.img-heart {
+.imgHeart{
   height: 24px;
   position: absolute;
   right: 40px;
   top: 20px;
 }
 
-.list-item-star-wrapper {
+.listItemStarWrapper {
   display: flex;
   padding-top: 3px;
 }
@@ -119,31 +119,31 @@ body {
   padding-right: 3px
 }
 
-.list-item-review-wrapper {
+.listItemReviewWrapper {
   display: flex;
 }
 
-.list-item-star {
+.listItemStar {
   height: 9px
 }
 
-.reviews-star {
+.reviewsStar {
   height: 12px
 }
 
 /* Modal CSS */
-.modal-wrapper {
+.modalWrapper {
   margin-left: 34px;
   margin-right: 34px;
   margin-top: 10px;
   margin-bottom: 34px;
 }
 
-/* .modal-wrapper-autoflow {
+/* .modalWrapperAutoflow {
   overflow: auto;
 } */
 
-.modal-background {
+.modalBackground {
   opacity: 0.6;
   background-color: white;
   position: fixed;
@@ -154,7 +154,7 @@ body {
   height: 100%
 }
 
-.modal-save-list {
+.modalSaveList {
   background-color: white;
   z-index: 10;
   position: absolute;
@@ -167,22 +167,22 @@ body {
   overflow: hidden;
 }
 
-.icon-x {
+.iconX {
   width: 18px
 }
 
-.icon-x-container {
+.iconXcontainer {
   padding-top: 28px;
   padding-bottom: 20px;
   cursor: pointer
 }
 
-.modal-list-inner {
+.modalListInner {
   height: 400px;
   overflow: auto
 }
 
-.modal-list-wrapper {
+.modalListWrapper {
   overflow: hidden;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -195,26 +195,27 @@ body {
   cursor: pointer
 }
 
-.modal-favlist-entry {
+.modalFavlistEntry {
   float: left;
   font-size: 16px;
   font-weight: 400;
   cursor: pointer
 }
 
-.icon-heart-line {
+.iconHeartLine {
   float: right;
   width: 24px;
   cursor: pointer
 }
 
-.blue-font {
+.blueFont {
+  font-weight: 600;
   color: #008489;
   cursor: pointer
 }
 
 /* Inner Modal CSS */
-.modal-inner-wrapper {
+.modalInnerWrapper {
   z-index: 15;
   position: absolute;
   padding-left: 34px;
@@ -226,17 +227,17 @@ body {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5)
 }
 
-.modal-inner-thumbnail {
+.modalInnerThumbnail {
   display: flex;
   width: 106px;
   height: 80px;
 }
 
-.modal-inner-location-detail {
+.modalInnerLocationDetail {
   padding-right: 3px;
 }
 
-.modal-inner-location {
+.modalInnerLocation {
   display: flex;
   font-size: 14px;
   line-height: 18px; 
@@ -244,39 +245,39 @@ body {
   padding-bottom: 5px
 }
 
-.modal-inner-header {
+.modalInnerHeader {
   padding-top: 30px;
   display: flex;
   padding-bottom: 26px;
   cursor: pointer
 }
 
-.modal-inner-header-caret {
+.modalInnerHeaderCaret {
   padding-top: 30px;
   padding-bottom: 5px
 }
 
-.icon-caret {
+.iconCaret {
   width: 15px
 }
 
-.modal-inner-header-wrapper {
+.modalInnerHeaderWrapper{
   padding-left: 18px
 }
 
-.modal-inner-title {
+.modalInnerTitle {
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
   padding-bottom: 5px
 }
 
-.modal-inner-reviewcount {
+.modalInnerReviewcount {
   font-size: 14px;
   line-height: 18px;
 }
 
-.modal-inner-section {
+.modalInnerSection {
   padding-top: 25px;
   border-style: solid;
   border-width: .75px;
@@ -287,49 +288,49 @@ body {
   border-color: rgba(0, 0, 0, 0.2)
 }
 
-.modal-inner-p {
+.modalInnerP {
   font-size: 14px;
   line-height: 18px; 
   font-weight: 200;
 }
 
 /* Reviews */
-.review-section {
+.reviewSection {
   padding-top: 10px;
   padding-bottom: 10px
 }
 
-.review-name {
+.reviewName {
   font-size: 14px;
   line-height: 18px;
   font-weight: 600;
 }
 
-.review-date {
+.reviewDate {
   font-size: 12px;
   line-height: 16px;
   font-weight: 200;
   padding-bottom: 10px
 }
 
-.review-comment {
+.reviewComment {
   font-size: 14px;
   line-height: 18px;
   font-weight: 200;
 }
 
 /* Form */
-.form-wrapper {
+.formWrapper {
   margin-top: 0px
 }
 
-.form-title {
+.formTitle {
   font-size: 16px;
   font-weight: 600;
   padding-bottom: 15px
 }
 
-.form-field {
+.formField {
   font-size: 16px;
   font-weight: 100;
   line-height: 24px;
@@ -346,7 +347,7 @@ body {
   outline: none
 }
 
-.form-cancel {
+.formCancel {
   font-size: 16px;
   font-weight: bold;
   color: #008489;
@@ -361,7 +362,7 @@ body {
   outline: none
 }
 
-.form-create {
+.formCreate {
   font-size: 16px;
   font-weight: bold;
   line-height: 24px;

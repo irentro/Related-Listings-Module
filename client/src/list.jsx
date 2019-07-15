@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../dist/style.css';
 
 class List extends React.Component {
   constructor(props) {
@@ -19,67 +20,67 @@ class List extends React.Component {
     }
 
     return(
-      <div className="list-container">
+      <div className={styles.listContainer}>
         {this.props.data.list.map(item =>
           <div 
-            className="list-item-wrapper"
+            className={styles.listItemWrapper}
             style={position}
             key={item._id}>
     
             <div 
-              className="heart-click"
+              className={styles.heartClick}
               name={item._id}
               onClick={this.handleSelectItem}>
               {item.favoriteList.length > 0 ? 
                 (<img 
-                  className="img-heart"
+                  className={styles.imgHeart}
                   name={item._id}
                   src="./heart-filled.png"/>) : 
                 (<img 
-                  className="img-heart"
+                  className={styles.imgHeart}
                   name={item._id}
                   src="./heart-unfilled.png"/>)}
             </div>
             <img
-              className="list-item-image"
+              className={styles.listItemImage}
               src={item.imageUrl}        
             />
 
             <div 
-              className="list-item-detail-wrapper">
-              <div className="list-item-category">
+              className={styles.listItemDetailWrapper}>
+              <div className={styles.listItemCategory}>
                 <div>
                   {item.roomType}
                 </div>
-                <div className="list-item-city">
+                <div className={styles.listItemCity}>
                   {item.city}
                 </div>
               </div>
-              <div className="list-item-title">
+              <div className={styles.listItemTitle}>
                 {item.title}
               </div>
-              <div className="list-item-price">
+              <div className={styles.listItemPrice}>
                 {`$${item.price}/night`}
               </div>
-              <div className="list-item-review-wrapper">
-                <div className="list-item-star-wrapper">
+              <div className={styles.listItemReviewWrapper}>
+                <div className={styles.listItemStarWrapper}>
                   <img 
-                    className="list-item-star" 
+                    className={styles.listItemStar} 
                     src="./star-filled.svg"/>
                   <img 
-                    className="list-item-star" 
+                    className={styles.listItemStar}
                     src="./star-filled.svg"/>
                   <img 
-                    className="list-item-star" 
+                    className={styles.listItemStar}
                     src="./star-filled.svg"/>
                   <img 
-                    className="list-item-star" 
+                    className={styles.listItemStar} 
                     src="./star-filled.svg"/>
                   <img 
-                    className="list-item-star" 
+                    className={styles.listItemStar} 
                     src="./star-filled.svg"/>
                 </div>
-                <div className="list-item-reviewCount">
+                <div className={styles.listItemReviewCount}>
                   {item.reviewCount}
                 </div>
 
