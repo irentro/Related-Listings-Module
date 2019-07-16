@@ -67,7 +67,7 @@ class ListModal extends React.Component {
             <div 
               className={styles.iconXcontainer}
               onClick={this.handleCloseModal}>
-              <img className={styles.iconX} src="./icon-x.png"/>
+              <img className={styles.iconX} src="https://rentro-icons.s3-us-west-1.amazonaws.com/icon-x.png"/>
             </div>
             <div className={styles.sectionHeader}>Save to list</div>
             <div className={styles.modalWrapperAutoflow}>
@@ -99,13 +99,13 @@ class ListModal extends React.Component {
                           {record[0].favoriteList.includes(item) ?
                           (<img 
                             className={styles.iconHeartLine} 
-                            src="./heart-solid.png"
+                            src="https://rentro-icons.s3-us-west-1.amazonaws.com/heart-solid.png"
                             idtag={id}
                             listname={item}> 
                           </img>) : 
                           (<img 
                             className={styles.iconHeartLine}
-                            src="./heart-line.png"
+                            src="https://rentro-icons.s3-us-west-1.amazonaws.com/heart-line.png"
                             idtag={id}
                             listname={item}>
                           </img>)}  

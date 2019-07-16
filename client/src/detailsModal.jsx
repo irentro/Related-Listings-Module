@@ -43,7 +43,7 @@ class DetailsModal extends React.Component {
               {this.state.positionY ? 
                 (<div className={styles.modalInnerHeaderCaret}>
                   <img className={styles.iconCaret} 
-                  src="./downarrow.png"/>
+                  src="https://rentro-icons.s3-us-west-1.amazonaws.com/downarrow.png"/>
                 </div>) : 
                 (<div></div>
               )}
@@ -66,22 +66,22 @@ class DetailsModal extends React.Component {
                   <div>{this.props.data[0].country}</div>
                 </div>
                 <div className={styles.listItemReviewWrapper}>
-                  <div className={[styles.listItemStarWrapper, styles.reviewsStarsWrapper]}>
+                  <div className={[styles.reviewsStarsWrapper]}>
                       <img 
-                        className={[styles.listItemStar, styles.reviewsStar]} 
-                        src="./star-filled.svg"/>
+                        className={styles.reviewsStar} 
+                        src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-unfilled.svg"/>
                       <img 
-                        className={[styles.listItemStar, styles.reviewsStar]} 
-                        src="./star-filled.svg"/>
+                        className={styles.reviewsStar} 
+                        src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-unfilled.svg"/>
                       <img 
-                        className={[styles.listItemStar, styles.reviewsStar]} 
-                        src="./star-filled.svg"/>
+                        className={styles.reviewsStar} 
+                        src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-unfilled.svg"/>
                       <img 
-                        className={[styles.listItemStar, styles.reviewsStar]} 
-                        src="./star-filled.svg"/>
+                        className={styles.reviewsStar} 
+                        src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-unfilled.svg"/>
                       <img 
-                        className={[styles.listItemStar, styles.reviewsStar]} 
-                        src="./star-filled.svg"/>
+                        className={styles.reviewsStar} 
+                        src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-unfilled.svg"/>
                     </div>
                   <div className={styles.modalInnerReviewcount}>{this.props.data[0].reviewCount}
                   </div>
