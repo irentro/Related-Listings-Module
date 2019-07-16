@@ -114,7 +114,9 @@
   padding-top: 3px;
 }
 
-.reviews-stars-wrapper {
+.reviewsStarsWrapper {
+  display: flex;
+  padding-top: 3px;
   padding-top: 2px;
   padding-right: 3px
 }

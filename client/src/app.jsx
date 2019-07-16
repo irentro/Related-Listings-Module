@@ -141,7 +141,7 @@ class App extends React.Component {
             className={styles.leftArrow}>
             <img 
               className={styles.imgArrow}
-              src="./leftarrow.png"
+              src="https://rentro-icons.s3-us-west-1.amazonaws.com/leftarrow.png"
               onClick={this.handleCarouselMoveLeft}/>        
           </div>
           <List 
@@ -151,7 +151,7 @@ class App extends React.Component {
             className={styles.rightArrow}>
             <img 
               className={styles.imgArrow}
-              src="./rightarrow.png"
+              src="https://rentro-icons.s3-us-west-1.amazonaws.com/rightarrow.png"
               onClick={this.handleCarouselMoveRight}/>         
           </div>
         </div>

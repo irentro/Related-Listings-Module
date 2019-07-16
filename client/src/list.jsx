@@ -35,11 +35,11 @@ class List extends React.Component {
                 (<img 
                   className={styles.imgHeart}
                   name={item._id}
-                  src="./heart-filled.png"/>) : 
+                  src="https://rentro-icons.s3-us-west-1.amazonaws.com/heart-filled.png"/>) : 
                 (<img 
                   className={styles.imgHeart}
                   name={item._id}
-                  src="./heart-unfilled.png"/>)}
+                  src="https://rentro-icons.s3-us-west-1.amazonaws.com/heart-unfilled.png"/>)}
             </div>
             <img
               className={styles.listItemImage}
@@ -66,19 +66,19 @@ class List extends React.Component {
                 <div className={styles.listItemStarWrapper}>
                   <img 
                     className={styles.listItemStar} 
-                    src="./star-filled.svg"/>
+                    src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-filled.svg"/>
                   <img 
                     className={styles.listItemStar}
-                    src="./star-filled.svg"/>
+                    src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-filled.svg"/>
                   <img 
                     className={styles.listItemStar}
-                    src="./star-filled.svg"/>
+                    src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-filled.svg"/>
                   <img 
                     className={styles.listItemStar} 
-                    src="./star-filled.svg"/>
+                    src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-filled.svg"/>
                   <img 
                     className={styles.listItemStar} 
-                    src="./star-filled.svg"/>
+                    src="https://rentro-icons.s3-us-west-1.amazonaws.com/star-filled.svg"/>
                 </div>
                 <div className={styles.listItemReviewCount}>
                   {item.reviewCount}
