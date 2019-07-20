@@ -4,6 +4,8 @@
   color: #484848;
 }
 
+
+
 .outterContainer {
   width: 1032px ;
   height: 432px;
@@ -159,7 +161,7 @@
 .modalSaveList {
   background-color: white;
   z-index: 10;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

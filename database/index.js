@@ -1,7 +1,14 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/recommendations');
 
-let recSchema = mongoose.Schema({
+mongoose.connect('mongodb://172.17.0.2:27017/recommendations');
+
+// mongoose.connect('mongodb://localhost/recommendations');
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => console.log('Mongoose is connected'));
+
+const recSchema = mongoose.Schema({
   saved: Boolean,
   imageUrl: String,
   roomType: String,
@@ -20,24 +27,24 @@ let recSchema = mongoose.Schema({
     {
       name: String,
       date: String,
-      comment: String
-    }
-  ]
+      comment: String,
+    },
+  ],
 });
 
 const Rec = mongoose.model('Recommendations', recSchema);
 
-let save = (obj, callback) => {
+const save = (obj, callback) => {
   const userRec = new Rec(obj);
   userRec.save((err) => {
-    if(err) {
+    if (err) {
       callback(err);
-    }
-    else {
-      callback(null, 'Saved')
+    } else {
+      callback(null, 'Saved');
     }
   });
-}
+};
 
 module.exports.save = save;
 module.exports.Rec = Rec;
+module.exports.db = db;

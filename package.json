@@ -14,10 +14,9 @@
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/index.js",
-    "start-client": "live-server",
-    "test": "jest",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "start": "node server/index.js",
+    "test": "jest"
   },
   "author": "Shane Zhao",
   "license": "ISC",
