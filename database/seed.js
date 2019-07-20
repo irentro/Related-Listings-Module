@@ -4,53 +4,51 @@ const Model = require('./index');
 const List = require('./title');
 
 const populate = () => {
-
-  //Counter for AWS S3 image url endpoint
+  // Counter for AWS S3 image url endpoint
   let imageCounter = 0;
 
-  for(var i = 0; i < 100; i++) {
-    let mockSaved = _.sample([true, false]);
-    let mockImageUrl = 'https://rentro-listing.s3-us-west-1.amazonaws.com/image' + imageCounter + '.jpg';
-    let mockRoomType = _.sample(['Entire place', 'Private room', 'Shared room']);
-    let mockCity = 'Los Angeles';
-    let mockState = 'California';
-    let mockCountry = 'United States';
-    let mockPrice = _.sample([110, 115, 125, 130, 135, 140, 145, 150, 155, 160]);
-    let mockReviewCount = faker.random.number({min:5, max:225});
-    let mockRatingStars = _.sample([4,5]);
-    let mockTitle = List.titles[i];
-    let aboutLength = faker.random.number({min:1, max:4});
-    let mockAbout = faker.lorem.paragraph(aboutLength);
-    let mockSpace = faker.lorem.paragraph(1);
-    let mockNeighborhood = faker.lorem.paragraph(1);
-    let mockList = [];
+  for (let i = 0; i < 100; i++) {
+    const mockSaved = _.sample([true, false]);
+    const mockImageUrl = `https://rentro-listing.s3-us-west-1.amazonaws.com/image${imageCounter}.jpg`;
+    const mockRoomType = _.sample(['Entire place', 'Private room', 'Shared room']);
+    const mockCity = 'Los Angeles';
+    const mockState = 'California';
+    const mockCountry = 'United States';
+    const mockPrice = _.sample([110, 115, 125, 130, 135, 140, 145, 150, 155, 160]);
+    const mockReviewCount = faker.random.number({ min: 5, max: 225 });
+    const mockRatingStars = _.sample([4, 5]);
+    const mockTitle = List.titles[i];
+    const aboutLength = faker.random.number({ min: 1, max: 4 });
+    const mockAbout = faker.lorem.paragraph(aboutLength);
+    const mockSpace = faker.lorem.paragraph(1);
+    const mockNeighborhood = faker.lorem.paragraph(1);
+    const mockList = [];
 
-    //Generate random number of reviews per record
+    // Generate random number of reviews per record
     // let reviewCount = faker.random.number({min:0, max:8});
-    let reviewCount = 2;
+    const reviewCount = 2;
 
-    //Array of review objects
-    let reviewsArr = [];
-    
-    //Generate review data for each record
-    for(var j = 0; j < reviewCount; j++) {
-      let mockName = faker.name.firstName();
-      let mockMonth = _.sample(['January', 'February', 'March', 'April','May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
-      let mockYear = _.sample([2017, 2018, 2019])
-      let mockDate = mockMonth + ' ' + mockYear;
-      let commentLength = faker.random.number({min:1, max:4});
-      let mockComment = faker.lorem.paragraph(commentLength);
-      let reviewObj =
-        {
-          name: mockName,
-          date: mockDate,
-          comment: mockComment
-        };
+    // Array of review objects
+    const reviewsArr = [];
+
+    // Generate review data for each record
+    for (let j = 0; j < reviewCount; j++) {
+      const mockName = faker.name.firstName();
+      const mockMonth = _.sample(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
+      const mockYear = _.sample([2017, 2018, 2019]);
+      const mockDate = `${mockMonth} ${mockYear}`;
+      const commentLength = faker.random.number({ min: 1, max: 4 });
+      const mockComment = faker.lorem.paragraph(commentLength);
+      const reviewObj = {
+        name: mockName,
+        date: mockDate,
+        comment: mockComment,
+      };
       reviewsArr.push(reviewObj);
     }
-  
-    //Object template for each listing record
-    let recordObj = {
+
+    // Object template for each listing record
+    const recordObj = {
       saved: mockSaved,
       imageUrl: mockImageUrl,
       roomType: mockRoomType,
@@ -65,20 +63,20 @@ const populate = () => {
       space: mockSpace,
       neighborhood: mockNeighborhood,
       favoriteList: mockList,
-      reviews: reviewsArr
-    }
+      reviews: reviewsArr,
+    };
 
     Model.save(recordObj, (err, result) => {
-      if(err) {
-        console.log('seed error', err)
-      }
-      else {
+      if (err) {
+        console.log('seed error', err);
+      } else {
         console.log(result);
+        Model.db.close();
       }
-    })
-    
+    });
+
     imageCounter++;
   }
-}
+};
 
-populate()
+populate();

@@ -5,22 +5,9 @@ const Model = require('../database/index');
 const app = express();
 const port = 4001;
 
-
 app.use(express.json());
-app.use('/app1', express.static('client/dist'));
 app.use(express.static('client/dist'));
 app.use(cors());
-
-// app.get('/app1', (req, res) => {
-//   console.log('Hello App server', testProxy);
-//   Model.Rec.find({}, (err, results) => {
-//     if (err) {
-//       res.status(400).send('error');
-//     } else {
-//       res.status(200).send(results);
-//     }
-//   });
-// });
 
 app.get('/recommendations', (req, res) => {
   Model.Rec.find({}, (err, results) => {

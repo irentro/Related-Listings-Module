@@ -1,0 +1,12 @@
+version : '3'
+
+services: 
+  recommendations:
+    build: ./
+    depends_on: 
+    - 'database'
+    ports:
+    - '4001:4001'
+
+    database:
+      image: mongo:latest

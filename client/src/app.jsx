@@ -33,7 +33,7 @@ class App extends React.Component {
   }
 
   handleFetch() {
-    axios.get('http://127.0.0.1:4001/recommendations')
+    axios.get('/recommendations')
       .then((response) => {
         
         let startIndex = faker.random.number({min:0, max:88});
@@ -52,7 +52,7 @@ class App extends React.Component {
   }
  
   handlePostFetch() {
-    axios.get('http://127.0.0.1:4001/recommendations')
+    axios.get('/recommendations')
     .then((response) => {
       
       let startIndex = this.state.index;
@@ -70,7 +70,7 @@ class App extends React.Component {
   }
 
   handleSave(value) {
-    axios.post('http://127.0.0.1:4001/recommendations/save', value)
+    axios.post('/recommendations/save', value)
     .then((response) => {
       this.handlePostFetch()
     })
@@ -80,7 +80,7 @@ class App extends React.Component {
   }
 
   handleUnSave(value) {
-    axios.post('http://127.0.0.1:4001/recommendations/unsave', value)
+    axios.post('/recommendations/unsave', value)
     .then((response) => {
       this.handlePostFetch()
     })
