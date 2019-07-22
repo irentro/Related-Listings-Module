@@ -1,4 +1,6 @@
 const express = require('express');
+// const expressStaticGzip = require('express-static-gzip');
+const compression = require('compression');
 const cors = require('cors');
 const Model = require('../database/index');
 
@@ -7,7 +9,15 @@ const port = 4001;
 
 app.use(express.json());
 app.use(express.static('client/dist'));
+app.use(compression());
 app.use(cors());
+// app.use('/', expressStaticGzip('client/dist', {
+//   enableBrotli: true,
+//   customCompressions: [{
+//     encodingName: 'gzip',
+//   }],
+//   orderPreference: ['br'],
+// }));
 
 app.get('/recommendations', (req, res) => {
   Model.Rec.find({}, (err, results) => {
