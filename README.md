@@ -3,7 +3,6 @@
 This related-listings module allows users to view recommended listings, save items to memory, and create new travel lists.
 
 ![Related Listings Module](https://github.com/irentro/recommendations/blob/master/relatedListingsModule.gif)
-+<img src="/relatedListingsModule.gif?raw=true" width="900px">
 
 ## Getting Started
 
