@@ -6,12 +6,10 @@ import styles from '../dist/style.css';
 class ListModal extends React.Component {
   constructor(props) {
     super(props)
-
     this.state=({
       saved: false,
       formShow: false
     })
-
     this.handleCloseModal=this.handleCloseModal.bind(this);
     this.handleSaveToList=this.handleSaveToList.bind(this);
     this.handleToggleSave=this.handleToggleSave.bind(this);
@@ -67,7 +65,9 @@ class ListModal extends React.Component {
             <div 
               className={styles.iconXcontainer}
               onClick={this.handleCloseModal}>
-              <img className={styles.iconX} src="https://rentro-icons.s3-us-west-1.amazonaws.com/icon-x.png"/>
+              <img 
+                className={styles.iconX} 
+                src="https://rentro-icons.s3-us-west-1.amazonaws.com/icon-x.png"/>
             </div>
             <div className={styles.sectionHeader}>Save to list</div>
             <div className={styles.modalWrapperAutoflow}>

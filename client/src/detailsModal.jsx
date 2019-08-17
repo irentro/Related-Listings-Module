@@ -5,11 +5,9 @@ import styles from '../dist/style.css';
 class DetailsModal extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
       positionY: false
     }
-
     this.handleMoveDetailsModal=this.handleMoveDetailsModal.bind(this)
   }
 
@@ -22,23 +20,18 @@ class DetailsModal extends React.Component {
 
   render() {
     const y = this.state.positionY ? 0 : 468;
-
     const detailsPosition = {
       transition: `0.5s`,
       transform: `translateY(${y}px)`
     }
 
     return(
-
       <div 
         className={styles.modalInnerWrapper}
         style={detailsPosition}>
-
           <div 
             className={styles.modalInnerHeaderContainer}
             onClick={this.handleMoveDetailsModal}>
-
-
             <div>
               {this.state.positionY ? 
                 (<div className={styles.modalInnerHeaderCaret}>
@@ -48,8 +41,6 @@ class DetailsModal extends React.Component {
                 (<div></div>
               )}
             </div>
-
-
             <div className={styles.modalInnerHeader}>
               <img 
                 className={styles.modalInnerThumbnail} 
@@ -88,8 +79,7 @@ class DetailsModal extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-          
+          </div>         
           <DetailsBody details={this.props.data}/>
       </div>
     )

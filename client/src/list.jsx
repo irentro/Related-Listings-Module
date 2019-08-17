@@ -4,7 +4,6 @@ import styles from '../dist/style.css';
 class List extends React.Component {
   constructor(props) {
     super(props)
-
     this.handleSelectItem = this.handleSelectItem.bind(this);
   }
 
@@ -18,15 +17,13 @@ class List extends React.Component {
       transition: `0.5s`,
       transform: `translateX(${x}px)`
     }
-
     return(
       <div className={styles.listContainer}>
         {this.props.data.list.map(item =>
           <div 
             className={styles.listItemWrapper}
             style={position}
-            key={item._id}>
-    
+            key={item._id}>  
             <div 
               className={styles.heartClick}
               name={item._id}
@@ -45,7 +42,6 @@ class List extends React.Component {
               className={styles.listItemImage}
               src={item.imageUrl}        
             />
-
             <div 
               className={styles.listItemDetailWrapper}>
               <div className={styles.listItemCategory}>
@@ -83,10 +79,8 @@ class List extends React.Component {
                 <div className={styles.listItemReviewCount}>
                   {item.reviewCount}
                 </div>
-
               </div>
             </div>
-
           </div>
         )}
       </div>

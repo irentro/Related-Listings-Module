@@ -4,7 +4,6 @@ import styles from '../dist/style.css';
 class DetailsBody extends React.Component {
   constructor(props) {
     super(props)
-
   }
 
   render() {

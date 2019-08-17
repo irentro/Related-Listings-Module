@@ -4,12 +4,10 @@ import styles from '../dist/style.css';
 class CreateList extends React.Component {
   constructor() {
     super()
-
     this.state = ({
       formShow: true,
       formValue: '',
     })
-
     this.handleToggleFormView=this.handleToggleFormView.bind(this);
     this.handleInput=this.handleInput.bind(this);
     this.handleFormValue=this.handleFormValue.bind(this);

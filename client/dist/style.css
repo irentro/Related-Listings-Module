@@ -4,7 +4,9 @@
   color: #484848;
 }
 
-
+.sectionHeadSpacer {
+  height: 200px;
+}
 
 .outterContainer {
   width: 1032px ;

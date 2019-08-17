@@ -8,7 +8,6 @@ import styles from '../dist/style.css';
 class App extends React.Component {
   constructor() {
     super()
-
     this.state = {
       index: 0,
       list : [],
@@ -17,7 +16,6 @@ class App extends React.Component {
       current: 0,
       favoriteLists: ["Weekend Trip", "Getaway", "Dream Home"],
     }
-
     this.handleFetch = this.handleFetch.bind(this);
     this.handleCarouselMoveRight = this.handleCarouselMoveRight.bind(this);
     this.handleCarouselMoveLeft = this.handleCarouselMoveLeft.bind(this);
@@ -132,6 +130,7 @@ class App extends React.Component {
             unSaveToList={this.handleUnSave}
             updateList={this.handleUpdateList}
             closeModal={this.handleUpdateModalView}/>) : <div></div>}
+        {/* <div className={styles.sectionHeadSpacer}></div> */}
         <div 
           className={styles.sectionHeader}>More places to stay
         </div>

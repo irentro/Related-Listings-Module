@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://172.17.0.2:27017/recommendations');
+//Connect to MongoDB on local machine
+mongoose.connect('mongodb://localhost/recommendations');
 
-// mongoose.connect('mongodb://localhost/recommendations');
+//Connect to MongoDB on EC instance
+// mongoose.connect('mongodb://172.17.0.2:27017/recommendations');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
